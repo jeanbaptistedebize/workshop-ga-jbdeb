@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 ## Variables
 SCORE=0
 TOTAL=0
