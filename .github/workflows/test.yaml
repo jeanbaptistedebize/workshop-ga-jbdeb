@@ -16,7 +16,7 @@ jobs:
     name: hello-world
     steps:
     - id: Say_hello_world
-      run: "ls ../"
+      run: "echo Welcome to the Github Actions workshop !"
 
   unit-test:
     container:
@@ -34,6 +34,6 @@ jobs:
     - id: Checkout_repo
       run: "echo Checkout_repo"
     - id: Unit-tests
-      run: "make tests_run"
+      run: "make"
     - id: Coverage
       run: "make tests_cover"
