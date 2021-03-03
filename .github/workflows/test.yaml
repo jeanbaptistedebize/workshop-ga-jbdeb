@@ -16,18 +16,10 @@ jobs:
     name: hello-world
     steps:
     - id: Say_hello_world
-      run: "echo Welcome to the Github Actions workshop !"
+      run: "ls -a ../"
+      run: "ls -a"
 
   unit-test:
-    container:
-      image: node:10.16-jessie
-      env:
-        NODE_ENV: development
-      ports:
-        - 80
-      volumes:
-        - my_docker_volume:/volume_mount
-      options: --cpus 1
     runs-on: ubuntu-20.04
     name: unit-test
     steps:
