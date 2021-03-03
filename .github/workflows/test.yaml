@@ -16,16 +16,13 @@ jobs:
     name: hello-world
     steps:
     - id: Say_hello_world
-      run: "ls -a ../"
-    - id: set1
-      run: "ls -a"
+      run: "echo hello word"
 
   unit-test:
     runs-on: ubuntu-20.04
     name: unit-test
     steps:
-    - id: Checkout_repo
-      run: "echo Checkout_repo"
+      - uses: actions/checkout@v1
     - id: Unit-tests
       run: "make"
     - id: Coverage
