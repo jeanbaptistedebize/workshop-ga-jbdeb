@@ -15,5 +15,5 @@ jobs:
     runs-on: ubuntu-20.04
     name: hello-world
     steps:
-    - id: Say hello world
+    - id: Say_hello_world
       run: "echo Welcome to the Github Actions workshop !"
