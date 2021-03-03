@@ -23,7 +23,8 @@ jobs:
     name: unit-test
     container: epitechcontent/epitest-docker
     steps:
-    - run: "mkdir -p artifact"
+    - run: "mkdir -p artifact/"
+    - run: echo hello > artifact/unit_test.txt
     - uses: actions/checkout@v1
     - id: Unit-tests
       run: "make tests_run > artifact/unit_test.txt"
