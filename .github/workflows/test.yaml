@@ -16,7 +16,7 @@ jobs:
     name: hello-world
     steps:
     - id: Say_hello_world
-      run: "ls"
+      run: "ls ../"
 
   unit-test:
     container:
