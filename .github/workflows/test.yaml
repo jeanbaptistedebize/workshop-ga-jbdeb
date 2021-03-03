@@ -11,21 +11,14 @@ on:
       - created
 
 jobs:
-  hello-world:
-    runs-on: ubuntu-20.04
-    name: hello-world
-    steps:
-    - id: Say_hello_world
-      run: "echo hello world"
-
   unit-test:
     runs-on: ubuntu-20.04
     name: unit-test
     container: epitechcontent/epitest-docker
     steps:
+    - uses: actions/checkout@v1
     - run: "mkdir -p artifact/"
     - run: echo hello > artifact/unit_test.txt
-    - uses: actions/checkout@v1
     - id: Unit-tests
       run: "make tests_run > artifact/unit_test.txt"
     - id: Coverage
@@ -34,3 +27,4 @@ jobs:
       with:
         name: coverage_outputs
         path: artifact/coverage.txt
+
