@@ -1,0 +1,20 @@
+
+Name: Test
+
+on: push
+  push:
+      branches:
+        - dev
+        - main
+  page_build:
+  release:
+    types:
+      - created
+
+jobs:
+  my_first_job:
+    runs-on: ubuntu-20.04
+    name: hello-world
+    steps:
+    - id: Say hello world
+      run: "echo Welcome to the Github Actions workshop !"
