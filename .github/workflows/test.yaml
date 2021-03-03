@@ -10,22 +10,21 @@ on:
     types:
       - created
 
-jobs1:
+jobs:
   hello-world:
-    runs-on: ubuntu-20.04
-    name: hello-world
-    steps:
-    - id: Say_hello_world
-      run: "echo Welcome to the Github Actions workshop !"
+      runs-on: ubuntu-20.04
+      name: hello-world
+      steps:
+      - id: Say_hello_world
+        run: "echo Welcome to the Github Actions workshop !"
 
-jobs2:
   unit-test:
-    runs-on: ubuntu-20.04
-    name: unit-test
-    steps:
-    - id: Checkout_repo
-      run: "echo Checkout_repo"
-    - id: Unit-tests
-      run: "make tests_run"
-    - id: Coverage
-      run: "make tests_cover"
+      runs-on: ubuntu-20.04
+      name: unit-test
+      steps:
+      - id: Checkout_repo
+        run: "echo Checkout_repo"
+      - id: Unit-tests
+        run: "make tests_run"
+      - id: Coverage
+        run: "make tests_cover"
