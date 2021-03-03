@@ -11,9 +11,19 @@ on:
       - created
 
 jobs:
-  my_first_job:
+  hello-world:
     runs-on: ubuntu-20.04
     name: hello-world
     steps:
     - id: Say_hello_world
       run: "echo Welcome to the Github Actions workshop !"
+  unit-test:
+    runs-on: ubuntu-20.04
+    name: hello-world
+    steps:
+    - id: Checkout_repo
+      run: "git checkout"
+    - id: Unit-tests
+      run: "make tests_run"
+    - id: Coverage
+      run: "make tests_cover"
