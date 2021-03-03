@@ -16,7 +16,7 @@ jobs:
     name: hello-world
     steps:
     - id: Say_hello_world
-      run: "echo Welcome to the Github Actions workshop !"
+      run: "ls"
 
   unit-test:
     container:
