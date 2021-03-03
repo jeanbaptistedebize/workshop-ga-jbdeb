@@ -16,15 +16,16 @@ jobs:
     name: hello-world
     steps:
     - id: Say_hello_world
-      run: "echo hello word"
+      run: "echo hello world"
 
   unit-test:
     runs-on: ubuntu-20.04
     name: unit-test
     container: epitechcontent/epitest-docker
     steps:
+    - run: "mkdir -p artifact"
     - uses: actions/checkout@v1
     - id: Unit-tests
-      run: "make tests_run"
+      run: "make tests_run > artifact/unit_test.txt"
     - id: Coverage
-      run: "make coverage"
+      run: "make coverage > artifact/coverage.txt"
