@@ -28,7 +28,7 @@ jobs:
     - uses: actions/checkout@v1
     - id: Unit-tests
       run: "make tests_run > artifact/unit_test.txt"
-    - id: Coverage
+    - id: Coveragee
       run: "make coverage > artifact/coverage.txt"
     - uses: actions/upload-artifact@v2
       with:
