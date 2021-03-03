@@ -39,7 +39,7 @@ jobs:
     container: epitechcontent/epitest-docker
     steps:
     - uses: actions/checkout@v1
-    - id: functional tests
+    - id: functional_tests
       run: "bash functional-test.sh > .github/workflows/tests_output"
     - uses: actions/upload-artifact@v2
       with:
