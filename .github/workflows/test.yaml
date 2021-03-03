@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-20.04
     name: unit-test
     steps:
-      - uses: actions/checkout@v1
+    - uses: actions/checkout@v1
     - id: Unit-tests
       run: "make"
     - id: Coverage
