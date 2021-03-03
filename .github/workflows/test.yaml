@@ -33,3 +33,18 @@ jobs:
         name: coverage_outputs
         path: .github/workflows/coverage_outputs
 
+  function-tests_outputs:
+    runs-on: ubuntu-20.04
+    name: function-tests_outputs
+    container: epitechcontent/epitest-docker
+    steps:
+    - uses: actions/checkout@v1
+    - id: Unit-tests
+      run: "make tests_run > .github/workflows/tests_run_outputs"
+    - id: Coverage
+      run: "make coverage > .github/workflows/coverage_outputs"
+    - uses: actions/upload-artifact@v2
+      with:
+        name: upload_artifacts
+        path: .github/workflows/coverage_outputs
+
