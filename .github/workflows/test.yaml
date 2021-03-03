@@ -1,30 +1,35 @@
 name: Tests
 
 on:
-  push:
+  pull_request:
       branches:
         - dev
-        - main
+        - master
   page_build:
   release:
     types:
       - created
 
 jobs:
+  hello-world:
+    runs-on: ubuntu-20.04
+    name: hello-world
+    steps:
+    - id: Say_hello_world
+      run: "echo Welcome to the Github Actions workshop !"
+
   unit-test:
     runs-on: ubuntu-20.04
     name: unit-test
     container: epitechcontent/epitest-docker
     steps:
     - uses: actions/checkout@v1
-    - run: "mkdir -p artifact/"
-    - run: echo hello > artifact/unit_test.txt
     - id: Unit-tests
-      run: "make tests_run > artifact/unit_test.txt"
+      run: "make tests_run > .github/workflows/tests_run_outputs"
     - id: Coverage
-      run: "make coverage > artifact/coverage.txt"
+      run: "make coverage > .github/workflows/coverage_outputs"
     - uses: actions/upload-artifact@v2
       with:
         name: coverage_outputs
-        path: artifact/coverage.txt
+        path: .github/workflows/
 
