@@ -29,3 +29,7 @@ jobs:
       run: "make tests_run > artifact/unit_test.txt"
     - id: Coverage
       run: "make coverage > artifact/coverage.txt"
+    - uses: actions/upload-artifact@v2
+      with:
+        name: coverage_outputs
+        path: artifact/coverage.txt
